@@ -19,10 +19,11 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
+    static: path.join(__dirname, 'dist'),
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: ".src/index.html",
+      template: './src/index.html'
     }),
 
     new MiniCssExtractPlugin({
@@ -48,6 +49,15 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '.src/img/',
+            }
+          }
+        ]
       },
 
       // Add your rules for custom modules here
