@@ -6,22 +6,22 @@ import _ from 'lodash';
 const API_URL = process.env.API_URL;
 
 
-
+//Definition of the constants that represent HTML elements
 const cityNameInput = document.getElementById("getInput");
-      const summaryElement = document.getElementById("summary");
-      const resultElement = document.getElementById("result");
-      const erroreElement = document.getElementById("errore");
-      const initElement = document.getElementById("initialPage");
-      const titleScore = document.getElementById("title-score");
-      const nameElement = document.getElementById("city-name");
+const summaryElement = document.getElementById("summary");
+const resultElement = document.getElementById("result");
+const erroreElement = document.getElementById("errore");
+const initElement = document.getElementById("initialPage");
+const titleScore = document.getElementById("title-score");
+const nameElement = document.getElementById("city-name");
 
-
-      titleScore.style.display = "none";
-      summaryElement.style.display = "none";
-      resultElement.style.display = "none";
-      erroreElement.style.display = "none";
-      initElement.style.display="block";
-      nameElement.style.display = "none"; 
+//Show and hide element in the initial page
+titleScore.style.display = "none";
+summaryElement.style.display = "none";
+resultElement.style.display = "none";
+erroreElement.style.display = "none";
+initElement.style.display="block";
+nameElement.style.display = "none"; 
 
 //Replaces whitespace characters with hyphens and converts the string to lowercase.
 function fixName(cityName) {
