@@ -3,7 +3,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 
-const API_URL = process.env.API_URL; //https://api.teleport.org/api/urban_areas/
+const API_URL = process.env.API_URL; //`https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
 
 
 
@@ -38,7 +38,7 @@ function getCity(event) {
     return;
   }
 
-  axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`)
+  axios.get(`${API_URL}slug:${cityName}/scores/`)
     .then(response => {
       const data = response.data;
       const categories = _.get(data, 'categories', []);
