@@ -21,7 +21,7 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    
+    port: 3000,
     
   },
   
@@ -35,7 +35,7 @@ const config = {
     }),
 
     new MiniCssExtractPlugin({
-       filename: './src/css/style.css',   
+       filename: '.src/css/style.css',   
     }),
 
     new Dotenv(),
