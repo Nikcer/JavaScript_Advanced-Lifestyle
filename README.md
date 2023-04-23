@@ -13,6 +13,7 @@ or
 yarn build
 ```
 ## Screenshots
+![Alt text](https://github.com/Nikcer/JavaScript_Advanced-Lifestyle/blob/master/src/img/screenshot.png)
 
 
 
