@@ -4,8 +4,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require('dotenv-webpack');
-
 const isProduction = process.env.NODE_ENV == "production";
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
@@ -15,24 +15,32 @@ const config = {
   entry: "./src/js/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+    
   },
   devServer: {
     open: true,
     host: "localhost",
-    static: path.join(__dirname, 'dist'),
+    
+    
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      favicon: './src/img/favicon.ico',
+      
+      
+
     }),
 
     new MiniCssExtractPlugin({
-       filename: '.src/css/style.css',   
+       filename: './src/css/style.css',   
     }),
 
-    new Dotenv({
-      systemvars: true,
-    }),
+    new Dotenv(),
+    
+    
     
     
   ],
@@ -44,21 +52,28 @@ const config = {
       },
       {
         test: /\.css$/i,
-        use: [stylesHandler, "css-loader"],
+        use: ["style-loader", "css-loader"],
+        
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.(eot|svg|ttf|woff|woff2|jpg|gif)$/i,
         type: "asset",
         use: [
           {
             loader: 'file-loader',
             options: {
+              
               name: '[name].[ext]',
-              outputPath: '.src/img/',
+              outputPath: 'images',
             }
           }
         ]
       },
+    
+      
+      
+      
+      
 
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/

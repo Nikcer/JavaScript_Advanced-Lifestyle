@@ -1,0 +1,258 @@
+* {
+    margin: 0px;
+     padding: 0;
+  }
+  body{
+    font-size: 16px;
+    font-family: 'Acme', sans-serif;
+  }
+  header{   
+    background-image: url(../img/city.png);
+    background-color: rgb(255, 215, 0);
+    height: 60vh;
+    background-size: cover; 
+    background-position: center center;
+  }
+
+  h1{
+    padding-top: 10% ;
+    text-align: center;
+    color: black;
+    font-size: 3rem;
+  }
+ .contenitore{
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+margin-bottom: 10px;
+  
+  
+
+
+ }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100vh;
+    border: none;
+    width: 600px;
+    height: 100px;
+    background-color: transparent;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    height:  39px;
+    width: 1000px;
+    outline: none;
+    background-color: white;
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: white;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+
+}
+
+main{
+    padding: 10px;
+
+    height: auto;
+    background-color: white /* #d3cd78 */;
+}
+
+#initialPage h1{
+    padding-top: 1%;
+    color: black;
+}
+#title-score h1{
+    padding-top: 3%;
+    color: black;
+}
+.sum-result-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#summary {
+    color: black;
+    width: 40%;
+    margin-left: 10%;
+    text-align: center;
+    font-size: 2rem;
+}
+#result{
+    color: black;
+    width: 40%;
+    margin-right: 10%;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#errore{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 18px;
+
+    height: 20vh;
+}
+
+footer{
+    height:auto;
+    background-color:  white;
+}
+.copyright {
+    text-align:center ;
+    padding-top: 3%;
+    position: relative;
+
+    font-size: 1.25em;
+    color: black;
+
+}
+/* Media query*/
+@media only screen and (max-width: 600px) {
+header {
+    height: 65vh;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.search-container {
+    width:80%;
+    height: 20px;
+}
+
+
+
+input[type="text"] {
+    width: 180px;
+    height: 35px;
+    outline: none;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+main{
+    height: auto;
+}
+.sum-result-container{
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#summary {
+
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+}
+#result{
+
+    width: 80%;
+    margin-top: 20px;
+    margin-right: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+#summary, #result {
+    font-size: 1.5rem;
+}
+.copyright {
+    padding-top: 25%;
+}
+
+
+/* Media query*/
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+header {
+    height: 50vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.search-container {
+    width: 50%;
+    height: 100px;
+}
+
+input[type="text"] {
+width:50%;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 2rem;
+}
+
+#summary, #result {
+    font-size: 2rem;
+}
+}
+
+
+@media only screen and (min-width: 1025px) {
+header {
+height:150vh;
+}
+
+h1 {
+font-size: 3rem;
+}
+
+.search-container {
+    width: 40%;
+    height: 150px;
+}
+
+input[type="text"] {
+    width: 1000px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 2rem;
+}
+
+#summary, #result {
+    font-size: 2rem;
+
+}
+footer{
+
+    height: auto;
+}
+.copyright {
+    padding-bottom: 20px;
+}
+}}
