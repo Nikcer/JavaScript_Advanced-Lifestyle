@@ -29,7 +29,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       favicon: './src/img/favicon.ico',
-      
+      css: './src/css/style.css',
       
 
     }),
@@ -38,7 +38,11 @@ const config = {
        filename: '.src/css/style.css',   
     }),
 
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }
+
+    ),
     
     
     

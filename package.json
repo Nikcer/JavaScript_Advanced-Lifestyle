@@ -33,6 +33,7 @@
     "loader": "^2.1.1",
     "mime-types": "^2.1.35",
     "mini-css-extract-plugin": "^2.7.5",
+    "netlify-cli": "^14.2.1",
     "prettier": "^2.8.7",
     "style-loader": "^3.3.2",
     "url-loader": "^4.1.1",
