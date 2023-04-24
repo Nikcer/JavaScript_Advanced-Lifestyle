@@ -15,20 +15,14 @@
 npm install
 ```
 
-## Run tests
 
-```sh
-npm run test
-```
+
+## Screenshots
+![Alt text](https://github.com/Nikcer/JavaScript_Advanced-Lifestyle/blob/master/src/img/screenshot.png)
 
 ## Author
 👤 **NIcolò Cerra**
 
 * Github: [@Nikcer](https://github.com/Nikcer)
-
-## Screenshots
-![Alt text](https://github.com/Nikcer/JavaScript_Advanced-Lifestyle/blob/master/src/img/screenshot.png)
-
-
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
