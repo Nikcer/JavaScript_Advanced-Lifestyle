@@ -1,19 +1,19 @@
 import '../css/style.css';
 import axios from 'axios';
 import _ from 'lodash';
-
+import {cityNameInput,summaryElement,resultElement,erroreElement,initElement,titleScore,nameElement} from './elements';
 
 const API_URL = process.env.API_URL;
 
 
 //Definition of the constants that represent HTML elements
-const cityNameInput = document.getElementById("getInput");
+/* const cityNameInput = document.getElementById("getInput");
 const summaryElement = document.getElementById("summary");
 const resultElement = document.getElementById("result");
 const erroreElement = document.getElementById("errore");
 const initElement = document.getElementById("initialPage");
 const titleScore = document.getElementById("title-score");
-const nameElement = document.getElementById("city-name");
+const nameElement = document.getElementById("city-name"); */
 
 //Show and hide element in the initial page
 titleScore.style.display = "none";
