@@ -62,7 +62,7 @@ input {
     border-radius: 50px 0 0 50px;
     height:  39px;
     width: 1000px;
-    outline: none;
+    outline: none !important;
     background-color: white;
 }
 
