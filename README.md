@@ -22,13 +22,13 @@ npm run test
 ```
 
 ## Author
-=======
+👤 **NIcolò Cerra**
+
+* Github: [@Nikcer](https://github.com/Nikcer)
+
 ## Screenshots
 ![Alt text](https://github.com/Nikcer/JavaScript_Advanced-Lifestyle/blob/master/src/img/screenshot.png)
 
 
-👤 **NIcolò Cerra**
-
-* Github: [@Nikcer](https://github.com/Nikcer)
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
