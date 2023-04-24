@@ -54,7 +54,7 @@ margin-bottom: 10px;
 
 }
 
-input[type="text"] {
+input {
     flex: 1;
     padding: 10px;
     font-size: 24px;
