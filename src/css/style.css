@@ -137,7 +137,7 @@ footer{
 
 }
 /* Media query*/
-@media only screen and (max-width: 400px){
+@media only screen and (min-width: 1025px) {
     .search-container {
         width: 30px  !important;
         height: 20px;
@@ -202,6 +202,7 @@ main{
     margin-right: 0;
     font-size: 2rem;
     text-align: center;
+}
 }
 
 
@@ -278,4 +279,4 @@ footer{
 .copyright {
     padding-bottom: 20px;
 }
-}}
+}
