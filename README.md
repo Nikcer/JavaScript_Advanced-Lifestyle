@@ -18,6 +18,8 @@
 A web app that allows obtaining information about the quality of life of cities using the external service Teleport.
 This project is part of the JavaScript Advanced course by Strt2Impact.
 
+## Tech Stack
+**Client:** HTML5, CSS3, JAVASCRIPT, webpack 5
 
 ## Demo
 
