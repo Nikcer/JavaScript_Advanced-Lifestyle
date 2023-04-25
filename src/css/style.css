@@ -144,7 +144,7 @@ footer{
     }
 
     input[type="text"] {
-        width: 150px !important;
+        width: 150px;
         max-width: 320px;
         height: 36px;
         outline: none;
@@ -154,9 +154,27 @@ footer{
         width: 32px;
         height: 32px;
     }
+    .sum-result-container{
+        
+        
+        flex-direction: column;
+    }
+    #summary {
+        color: black;
+        width: 40%;
+        margin-left: 35% ;
+        text-align: center;
+        font-size: 2rem;
+    }
+    #result{
+        color: black;
+        width: 40%;
+        margin-left: 35% ;
+        font-size: 2rem;
+        text-align: center;
+    }
+
 }
-
-
 
 @media only screen  and (min-width: 401px) and  (max-width: 600px) {
 header {
@@ -197,11 +215,13 @@ main{
     width: 80%;
     text-align: center;
     font-size: 2rem;
+    margin-left: 35%;
+    padding-bottom: 5%;
 }
 #result{
 
     width: 80%;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-right: 0;
     font-size: 2rem;
     text-align: center;
