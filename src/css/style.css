@@ -139,12 +139,12 @@ footer{
 /* Media query*/
 @media only screen and (max-width: 400px) {
     .search-container {
-        width: 20px  !important;
+        width: 10px  !important;
         height: 20px;
     }
 
     input[type="text"] {
-        width: 19px !important;
+        width: 9px !important;
         height: 36px;
         outline: none ;
     }
