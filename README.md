@@ -1,4 +1,3 @@
-
 <h1 align="center">🚀 Welcome to my JavaScript Advanced - Lifestyle project!</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
@@ -11,6 +10,7 @@
 </p>
 
 ## Screenshots
+
 ![Alt text](https://github.com/Nikcer/JavaScript_Advanced-Lifestyle/blob/master/src/img/screenshot.png)
 
 # Description
@@ -19,6 +19,7 @@ A web app that allows obtaining information about the quality of life of cities 
 This project is part of the JavaScript Advanced course by Strt2Impact.
 
 ## Tech Stack
+
 **Client:** HTML5, CSS3, JAVASCRIPT, webpack 5
 
 ## Demo
@@ -32,11 +33,8 @@ To run this project, you will need to add the following environment variables to
 `API_URL` = teleport api url
 
 ## Author
+
 👤 **Nicolò Cerra**
 
-* Github: [@Nikcer](https://github.com/Nikcer)
-* Linkedin: [@Nikcer](https://www.linkedin.com/in/nicol%C3%B2-cerra-492325231/)
-
-
-
-
+- Github: [@Nikcer](https://github.com/Nikcer)
+- Linkedin: [@Nikcer](https://www.linkedin.com/in/nicol%C3%B2-cerra-492325231/)
