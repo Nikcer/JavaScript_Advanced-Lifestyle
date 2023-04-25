@@ -30,9 +30,10 @@ To run this project, you will need to add the following environment variables to
 `API_URL` = teleport api url
 
 ## Author
-👤 **NIcolò Cerra**
+👤 **Nicolò Cerra**
 
 * Github: [@Nikcer](https://github.com/Nikcer)
+* Linkedin: [@Nikcer](https://www.linkedin.com/in/nicol%C3%B2-cerra-492325231/)
 
 
 
