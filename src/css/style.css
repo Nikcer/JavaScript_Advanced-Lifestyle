@@ -60,7 +60,7 @@ input {
     font-size: 24px;
     border: none;
     border-radius: 50px 0 0 50px;
-    height:  39px;
+    height:  40px;
     width: 1000px;
     outline: none !important;
     background-color: white;
@@ -151,7 +151,7 @@ h1 {
 
 input[type="text"] {
     width: 85px;
-    height: 35px;
+    height: 33px;
     outline: none;
 }
 
