@@ -65,6 +65,10 @@ input {
     outline: none !important;
     background-color: white;
 }
+svg{
+    width: 36px;
+    height: 36px;
+}
 
 
 button {
@@ -135,14 +139,18 @@ footer{
 /* Media query*/
 @media only screen and (max-width: 400px){
     .search-container {
-        width:80%;
+        width:70%;
         height: 20px;
     }
 
     input[type="text"] {
         width: 35px;
-        height: 33px;
+        height: 36px;
         outline: none;
+    }
+    svg{
+        width: 32px;
+        height:32px;
     }
 }
 
