@@ -133,7 +133,16 @@ footer{
 
 }
 /* Media query*/
-@media only screen and (max-width: 600px) {
+@media only screen and and (max-width: 40px){
+    input[type="text"] {
+        width: 85px;
+        height: 33px;
+        outline: none;
+    }
+}
+
+
+@media only screen  and (min-width: 401px) and  (max-width: 600px) {
 header {
     height: 65vh;
 }
@@ -151,7 +160,7 @@ h1 {
 
 input[type="text"] {
     width: 85px;
-    height: 33px;
+    height: 30px;
     outline: none;
 }
 
