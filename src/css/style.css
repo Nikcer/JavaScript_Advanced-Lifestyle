@@ -133,9 +133,9 @@ footer{
 
 }
 /* Media query*/
-@media only screen and and (max-width: 400px){
+@media only screen and (max-width: 400px){
     input[type="text"] {
-        width: 50px;
+        width: 35px;
         height: 33px;
         outline: none;
     }
