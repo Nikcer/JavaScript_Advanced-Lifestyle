@@ -144,7 +144,7 @@ footer{
     }
 
     input[type="text"] {
-        width: 80%;
+        width: 150px;
         max-width: 320px;
         height: 36px;
         outline: none;
@@ -221,6 +221,7 @@ main{
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
 header {
     height: 50vh;
+    position: relative;
 }
 
 h1 {
@@ -232,14 +233,22 @@ h1 {
     height: 150px;
 }
 
-input[type="text"] {
-width:50%;
-height: 38px;
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    border-radius: 50px 0 0 50px;
+    height:  40px;
+    width: 1000px;
+    outline: none ;
+    background-color: white !important;
 }
 
 button {
     padding: 10px 15px;
     font-size: 2rem;
+    
 }
 
 #summary, #result {
