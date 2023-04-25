@@ -7,22 +7,24 @@
   </a>
 </p>
 
-> 	(My JavaScript Advancedproject)
-
-## Install
-
-```sh
-npm install
-```
-
-
-
 ## Screenshots
 ![Alt text](https://github.com/Nikcer/JavaScript_Advanced-Lifestyle/blob/master/src/img/screenshot.png)
+
+##Description
+A web app that allows obtaining information about the quality of life of cities using the external service Teleport.
+This is my project for start2impact Javascript Advanced course.
+
+##Demo
+https://javascript-advanced-lifestyle.netlify.app
+
+##Environment Variables
+To run this project, you will need to add the following environment variables to your .env file
+
+API_URL = teleport api url
 
 ## Author
 👤 **NIcolò Cerra**
 
 * Github: [@Nikcer](https://github.com/Nikcer)
 
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
