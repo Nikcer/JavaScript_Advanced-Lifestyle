@@ -134,6 +134,11 @@ footer{
 }
 /* Media query*/
 @media only screen and (max-width: 400px){
+    .search-container {
+        width:80%;
+        height: 20px;
+    }
+
     input[type="text"] {
         width: 35px;
         height: 33px;
