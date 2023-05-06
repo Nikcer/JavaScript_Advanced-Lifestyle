@@ -20,55 +20,80 @@ function fixName(cityName) {
 }
 
 //Retrieves city data from the Teleport API and displays it on the page
-function getCity(event) {
-  event.preventDefault();
-
-  const cityName = fixName(cityNameInput.value); //Get the city name from the input field and fixes the casing
-
-  if (!cityName) {                      //If the city name is not provided, show an alert and return
-    alert("Please enter a city name");
-    return;
-  }
-
-  axios.get(`${API_URL}slug:${cityName}/scores/`)   //Make a GET request to the Teleport API
+function handleCityExists(cityName) {
+  axios.get(`${API_URL}slug:${cityName}/scores/`)
     .then(response => {
-      const data = response.data;                            // Extract the response data                                                                                                      
-      const categories = _.get(data, 'categories');         //Get categories, summary and teleport_city_score
-      const summary = _.get(data, 'summary');              //from response
+      const data = response.data;
+      const categories = _.get(data, 'categories');
+      const summary = _.get(data, 'summary');
       const teleportCityScore = _.get(data, 'teleport_city_score');
 
       let resultHTML = "";
-      let summaryHTML = "";  //Inizialize an empty string for resultHTML and summaryHTML
-      const cityNameUpperCase = cityNameInput.value.toUpperCase() + ` is ${teleportCityScore.toFixed(1)}/100`; //Create a string that displays the city name and its score
+      let summaryHTML = "";
+      const cityNameUpperCase = cityName.toUpperCase() + ` is ${teleportCityScore.toFixed(1)}/100`;
 
-
-      summaryHTML += `<h3>Summary:</h3> <p>${summary}</p>`; //Add summary to the summary_HTML
+      summaryHTML += `<h3>Summary:</h3> <p>${summary}</p>`;
 
       resultHTML += "<h3>Score:</h3>";
-      categories.forEach(category => {  //Loop through each category in the categories array
-        const score = _.get(category, 'score_out_of_10').toFixed(1); //Get the score for the category
-        resultHTML += `<p>${_.get(category, 'name')}: ${score}/10 </p>`; //Add the category name and score to the result HTML
+      categories.forEach(category => {
+        const score = _.get(category, 'score_out_of_10').toFixed(1);
+        resultHTML += `<p>${_.get(category, 'name')}: ${score}/10 </p>`;
       });
 
-      nameElement.innerHTML = cityNameUpperCase; //Set the city name and score as the inner HTML of the name element
-      summaryElement.innerHTML = summaryHTML;    //Set the summaryHTML as the inner HTML of the summarycelement
-      resultElement.innerHTML = resultHTML;      //Set the resultHTML as the inner HTML of the resultelement
+      nameElement.innerHTML = cityNameUpperCase;
+      summaryElement.innerHTML = summaryHTML;
+      resultElement.innerHTML = resultHTML;
 
-      //Show or hide element
       nameElement.style.display = "block";
       summaryElement.style.display = "block";
       resultElement.style.display = 'block';
       erroreElement.style.display = 'none';
       initElement.style.display = "none";
-      titleScore.style.display = "block"; 
+      titleScore.style.display = "block";
     })
-    .catch(error => { //If there's an error with the GET request set a message error
-      erroreElement.innerHTML = "This city is not available, please try again!";
-      resultElement.style.display = "none";
-      summaryElement.style.display = "none";
-      erroreElement.style.display = 'block';
-      initElement.style.display = "none";
-      titleScore.style.display = "none";
+    .catch(error => {
+      alert("Error, Please try again.");
+    });
+}
+
+function handleCityNotExists() {
+  erroreElement.innerHTML = "This city is not available, please try again!";
+  erroreElement.style.display = 'block';
+  initElement.style.display = "none";
+  nameElement.style.display = "none";
+  summaryElement.style.display = "none";
+  resultElement.style.display = 'none';
+  titleScore.style.display = "none";
+}
+
+function handleResponse(response) {
+  if (response.status === 200) {
+    const cityName = fixName(cityNameInput.value);
+    handleCityExists(cityName);
+  } else if (response.status === 404) {
+    handleCityNotExists();
+  } else {
+    alert("Error, Please try again later.");
+  }
+}
+
+function getCity(event) {
+  event.preventDefault();
+
+  const cityName = fixName(cityNameInput.value);
+
+  if (!cityName) {
+    alert("Please enter a city name");
+    return;
+  }
+
+  axios.head(`${API_URL}slug:${cityName}/`)
+    .then(response => {
+      handleResponse(response);
+    })
+    .catch(error => {
+      handleCityNotExists()
+      
     });
 }
 
