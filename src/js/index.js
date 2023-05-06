@@ -87,7 +87,7 @@ function getCity(event) {
     return;
   }
 
-  axios.head(`${API_URL}slug:${cityName}/`)
+  axios.get(`${API_URL}slug:${cityName}/`)
     .then(response => {
       handleResponse(response);
     })
