@@ -20,7 +20,7 @@ function fixName(cityName) {
 }
 
 //Retrieves city data from the Teleport API and displays it on the page
-function handleCityExists(cityName) {
+function CityExists(cityName) {
   axios.get(`${API_URL}slug:${cityName}/scores/`)
     .then(response => {
       const data = response.data;
@@ -56,7 +56,7 @@ function handleCityExists(cityName) {
     });
 }
 
-function handleCityNotExists() {
+function CityNotExists() {
   erroreElement.innerHTML = "This city is not available, please try again!";
   erroreElement.style.display = 'block';
   initElement.style.display = "none";
@@ -66,12 +66,12 @@ function handleCityNotExists() {
   titleScore.style.display = "none";
 }
 
-function handleResponse(response) {
+function Response(response) {
   if (response.status === 200) {
     const cityName = fixName(cityNameInput.value);
-    handleCityExists(cityName);
+    CityExists(cityName);
   } else if (response.status === 404) {
-    handleCityNotExists();
+    CityNotExists();
   } else {
     alert("Error, Please try again later.");
   }
@@ -87,12 +87,12 @@ function getCity(event) {
     return;
   }
 
-  axios.get(`${API_URL}slug:${cityName}/`)
+  axios.head(`${API_URL}slug:${cityName}/`)
     .then(response => {
-      handleResponse(response);
+      Response(response);
     })
     .catch(error => {
-      handleCityNotExists()
+      CityNotExists()
       
     });
 }
