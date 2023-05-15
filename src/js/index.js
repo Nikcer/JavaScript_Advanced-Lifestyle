@@ -1,10 +1,10 @@
 import '../css/style.css';
 import axios from 'axios';
-import _ from 'lodash';
+/* import _ from 'lodash'; */
 import {cityNameInput,summaryElement,resultElement,erroreElement,initElement,titleScore,nameElement} from './elements';
-
+const _get = require('lodash/get');
 const API_URL = process.env.API_URL;
-
+let citiesList = [];
 
 //Show and hide element in the initial page
 titleScore.style.display = "none";
@@ -18,6 +18,22 @@ nameElement.style.display = "none";
 function fixName(cityName) {
   return cityName.toLowerCase().replace(/\s+/g, "-");
 }
+
+(async function downloadCities() {
+  try {
+    const response = await axios.get(`https://api.teleport.org/api/urban_areas/`);
+    
+    if (response.status === 404) {
+      throw new Error("Download Error");
+    }
+
+    citiesList =  await _get(response, "data._links.ua:item", "Download Error");  
+
+  } catch (error) {
+    alert(error.message);
+  }})();
+
+
 
 //Retrieves city data from the Teleport API and displays it on the page
 function handleCityExists(cityName) {
@@ -52,12 +68,18 @@ function handleCityExists(cityName) {
       titleScore.style.display = "block";
     })
     .catch(error => {
-      alert("Error, Please try again.");
+      if (error.response && error.response.status === 404) {
+        alert("Error 404, please try again.");
+      }else{
+        alert("Error, Please try again.")
+        
+      }
+      
     });
 }
 
 function handleCityNotExists() {
-  erroreElement.innerHTML = "This city is not available, please try again!";
+  erroreElement.innerHTML = "This city is not avaiable, please try again!";
   erroreElement.style.display = 'block';
   initElement.style.display = "none";
   nameElement.style.display = "none";
@@ -66,38 +88,29 @@ function handleCityNotExists() {
   titleScore.style.display = "none";
 }
 
-function handleResponse(response) {
-  if (response.status === 200) {
-    const cityName = fixName(cityNameInput.value);
-    handleCityExists(cityName);
-  } else if (response.status === 404) {
-    handleCityNotExists();
-  } else {
-    alert("Error, Please try again later.");
-  }
-}
 
-function getCity(event) {
+async function getCity(event) {
   event.preventDefault();
 
-  const cityName = fixName(cityNameInput.value);
+  const cityNameList = cityNameInput.value;
 
-  if (!cityName) {
+  if (!cityNameList) {
     alert("Please enter a city name");
     return;
   }
 
-  axios.get(`${API_URL}slug:${cityName}/`)
-    .then(response => {
-      handleResponse(response);
-    })
-    .catch(error => {
-      handleCityNotExists()
-      
-    });
+  const cityLink = citiesList.find(city => city.name.toLowerCase() === cityNameList.toLowerCase());
+
+  if (cityLink) {
+    
+    const cityName = fixName(cityNameInput.value);
+    handleCityExists(cityName)
+    
+  } else {
+    
+    handleCityNotExists();
+  }
 }
-
-
 
 //Event listeners
 searchButton.addEventListener("click", getCity);
