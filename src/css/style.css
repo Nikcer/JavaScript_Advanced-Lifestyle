@@ -60,7 +60,7 @@
 input {
     flex: 1;
     padding: 10px;
-    font-size: 24px;
+    font-size: 20px;
     border: none;
     border-radius: 50px 0 0 50px;
     height:  36px;
@@ -291,12 +291,7 @@ header {
         height: auto;
     }
 
-    input[type="text"] {
-        width: 80%;
-        max-width: 300px;
-        height: 36px;
-        outline: none;
-    }
+    
 
     svg {
         width: 25px;
@@ -316,13 +311,14 @@ font-size: 3rem;
 
 input[type="text"] {
     width: 1000px;
-    height: 37px;
+    height: 34px;
+    font-size: 2rem;
 }
 
 button {
     padding: 10px 15px;
     font-size: 2rem;
-    height: 45px;
+    height: 54px;
     
 }
 
