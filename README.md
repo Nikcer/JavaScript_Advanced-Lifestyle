@@ -24,7 +24,7 @@ This project is part of the JavaScript Advanced course by Strt2Impact.
 
 ## Demo
 
-https://javascript-advanced-lifestyle.netlify.app
+https://find-your-city.netlify.app/
 
 ## Environment Variables
 
