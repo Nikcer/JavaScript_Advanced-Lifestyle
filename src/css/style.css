@@ -320,6 +320,7 @@ input[type="text"] {
 button {
     padding: 10px 15px;
     font-size: 2rem;
+    height: 45px;
     
 }
 
