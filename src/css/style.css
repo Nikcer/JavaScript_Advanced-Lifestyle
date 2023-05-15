@@ -260,6 +260,7 @@ h1 {
 input {
     flex: 1;
     padding: 10px;
+    padding-top: 20px; /* ! */
     font-size: 24px;
     border: none;
     border-radius: 50px 0 0 50px;
@@ -315,6 +316,7 @@ font-size: 3rem;
 
 input[type="text"] {
     width: 1000px;
+    height: 36px;
 }
 
 button {
